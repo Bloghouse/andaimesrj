@@ -5,7 +5,7 @@ import vercel from '@astrojs/vercel/serverless';
 
 export default defineConfig({
   site: 'https://andaimesrj.com.br',
-  output: 'server',
+  output: 'static',
   adapter: vercel(),
   integrations: [tailwind(), sitemap()],
 });
