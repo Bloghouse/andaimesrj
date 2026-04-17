@@ -1,0 +1,44 @@
+---
+import { SITE_CONFIG } from '../data/config';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": SITE_CONFIG.name,
+  "image": `${SITE_CONFIG.domain}/logo.png`,
+  "@id": `${SITE_CONFIG.domain}`,
+  "url": SITE_CONFIG.domain,
+  "telephone": SITE_CONFIG.phone,
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": SITE_CONFIG.address.street,
+    "addressLocality": SITE_CONFIG.address.city,
+    "addressRegion": SITE_CONFIG.address.state,
+    "postalCode": SITE_CONFIG.address.zip,
+    "addressCountry": "BR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -22.9068, // Coordenadas aproximadas do Centro do RJ
+    "longitude": -43.1729
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday"
+    ],
+    "opens": "08:00",
+    "closes": "18:00"
+  },
+  "sameAs": [
+    SITE_CONFIG.social.facebook,
+    SITE_CONFIG.social.instagram
+  ]
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

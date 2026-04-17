@@ -1,0 +1,44 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const servicos = await getCollection('servicos');
+---
+
+<Layout title="Nossos Equipamentos | Andaime PRO - Catálogo Completo">
+	<main>
+		<section class="py-32 bg-slate-50">
+			<div class="container">
+				<div class="max-w-4xl mb-24">
+					<span class="text-primary font-black uppercase tracking-widest mb-6 block">Nosso Catálogo</span>
+					<h1 class="text-4xl md:text-7xl font-black text-slate-950 mb-8 leading-[1.1] tracking-tighter">
+						Equipamentos de <span class="text-primary">Ponta</span> para sua Segurança.
+					</h1>
+					<p class="text-xl text-slate-600 font-medium leading-relaxed">
+						Soluções certificadas para acesso, escoramento e proteção coletiva em obras de todos os portes.
+					</p>
+				</div>
+				
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+					{servicos.map((servico) => (
+						<a href={`/servicos/${servico.slug}`} class="bg-white p-12 rounded-[2.5rem] border border-slate-100 hover:shadow-2xl hover:scale-105 transition-all group shadow-sm">
+							<div class="w-16 h-16 bg-slate-50 rounded-2x flex items-center justify-center mb-8 group-hover:bg-primary transition-colors">
+								<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+								</svg>
+							</div>
+							<h3 class="text-2xl font-black text-slate-950 mb-6 tracking-tighter group-hover:text-primary transition-colors">{servico.data.title}</h3>
+							<p class="text-slate-600 font-medium leading-relaxed mb-8">
+								{servico.data.description}
+							</p>
+							<span class="text-primary font-black uppercase text-xs tracking-widest flex items-center gap-2 group-hover:gap-4 transition-all">
+								Ver Detalhes do Produto <span>→</span>
+							</span>
+						</a>
+					))}
+				</div>
+			</div>
+		</section>
+	</main>
+</Layout>
+

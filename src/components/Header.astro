@@ -1,0 +1,100 @@
+---
+---
+<header class="fixed w-full top-0 z-[100] bg-white/95 backdrop-blur-md border-b border-slate-100">
+  <div class="container py-4 flex justify-between items-center">
+    <!-- Logo -->
+    <a href="/" class="flex items-center gap-2 hover:scale-105 transition-all active:scale-95 group">
+      <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center shadow-lg shadow-primary/20 group-hover:rotate-3 transition-transform">
+        <span class="font-black text-white leading-none text-xl">A</span>
+      </div>
+      <span class="text-xl font-black tracking-tighter text-secondary uppercase">Andaime<span class="text-primary">Pro</span></span>
+    </a>
+
+    <!-- Desktop Nav -->
+    <nav class="hidden md:flex items-center gap-8">
+      <a href="/" class="text-sm font-bold text-slate-600 hover:text-primary transition-all">Início</a>
+      <a href="/servicos" class="text-sm font-bold text-slate-600 hover:text-primary transition-all">Serviços</a>
+      <a href="/blog" class="text-sm font-bold text-slate-600 hover:text-primary transition-all">Blog</a>
+      <a href="/sobre" class="text-sm font-bold text-slate-600 hover:text-primary transition-all">Sobre</a>
+      <a href="/contato" class="bg-primary text-white border-2 border-primary px-6 py-3 rounded-xl text-sm font-black hover:scale-105 active:scale-95 transition-all shadow-xl shadow-primary/20">
+        Falar com Consultor
+      </a>
+    </nav>
+
+    <!-- Mobile Trigger (Hamburger) -->
+    <button id="menu-open" class="md:hidden text-secondary p-2 hover:scale-110 active:scale-90 transition-all focus:outline-none" aria-label="Abrir Menu">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-9 w-9" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16m-7 6h7" />
+      </svg>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile Drawer Indestrutível (FORA DO HEADER PARA Z-INDEX MÁXIMO) -->
+<div id="mobile-menu" class="fixed inset-0 z-[9999] bg-[#020617] translate-x-full transition-transform duration-500 ease-in-out hidden overflow-y-auto">
+  <div class="flex flex-col min-h-screen p-8">
+    <div class="flex justify-between items-center mb-16">
+      <!-- Logo no Menu -->
+      <div class="flex items-center gap-2">
+         <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+           <span class="font-black text-white text-xl">A</span>
+         </div>
+         <span class="text-xl font-black text-white tracking-tighter uppercase">Andaime<span class="text-primary">Pro</span></span>
+      </div>
+      <!-- Close Button -->
+      <button id="menu-close" class="text-white p-2 hover:rotate-90 transition-all duration-300 focus:outline-none" aria-label="Fechar Menu">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+    
+    <nav class="flex flex-col items-center justify-center flex-grow gap-10 py-10">
+      <a href="/" class="mobile-link text-4xl font-black text-white hover:text-primary transition-all active:scale-90 tracking-tighter">Início</a>
+      <a href="/servicos" class="mobile-link text-4xl font-black text-white hover:text-primary transition-all active:scale-90 tracking-tighter">Serviços</a>
+      <a href="/blog" class="mobile-link text-4xl font-black text-white hover:text-primary transition-all active:scale-90 tracking-tighter">Blog</a>
+      <a href="/sobre" class="mobile-link text-4xl font-black text-white hover:text-primary transition-all active:scale-90 tracking-tighter">Sobre Nós</a>
+      
+      <a href="https://wa.me/551133445566" target="_blank" class="mt-12 bg-primary text-white w-full py-7 rounded-[2.5rem] text-2xl font-black text-center shadow-2xl shadow-primary/40 hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-4 border-2 border-primary">
+        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.588-5.946 0-6.556 5.332-11.888 11.888-11.888 3.176 0 6.161 1.237 8.404 3.483 2.247 2.246 3.483 5.232 3.483 8.405 0 6.556-5.334 11.89-11.888 11.89-2.016 0-3.991-.512-5.748-1.487l-6.238 1.636zm5.066-5.067l.311.185c1.516.902 3.268 1.378 5.071 1.378 5.424 0 9.837-4.412 9.837-9.837 0-2.628-1.024-5.101-2.88-6.958-1.856-1.857-4.327-2.881-6.957-2.881-5.424 0-9.838 4.413-9.838 9.838 0 2.158.7 4.259 2.019 6.002l.232.308-1.002 3.664 3.757-.985zm11.332-5.477c-.285-.144-1.687-.832-1.947-.927-.261-.096-.451-.144-.641.144-.19.287-.736.927-.903 1.118-.166.19-.332.215-.617.072-.285-.144-1.204-.444-2.293-1.415-.848-.756-1.42-1.689-1.586-1.976-.166-.287-.018-.442.125-.584.128-.128.285-.335.428-.503.142-.167.19-.287.285-.479.095-.19.047-.359-.024-.503-.071-.144-.641-1.545-.878-2.12-.231-.559-.465-.483-.64-.492-.166-.008-.356-.01-.546-.01s-.499.072-.76.359c-.261.287-1 0.978-1 2.388s1.021 2.774 1.164 2.965c.143.19 2.009 3.067 4.868 4.301.68.293 1.21.469 1.623.6s.785.056 1.081.012c.33-.049 1.365-.558 1.556-1.099.19-.54.19-1.006.133-1.1-.057-.094-.214-.144-.499-.286z"/></svg>
+         Falar no WhatsApp
+      </a>
+    </nav>
+
+    <div class="mt-auto text-center py-6 border-t border-white/5">
+      <p class="text-gray-500 font-black uppercase tracking-widest text-xs">Suporte 24h: (11) 3344-5566</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  const menuOpen = document.getElementById('menu-open');
+  const menuClose = document.getElementById('menu-close');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const mobileLinks = document.querySelectorAll('.mobile-link');
+
+  function openMenu() {
+    mobileMenu.classList.remove('hidden');
+    setTimeout(() => {
+      mobileMenu.classList.remove('translate-x-full');
+    }, 10);
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMenu() {
+    mobileMenu.classList.add('translate-x-full');
+    setTimeout(() => {
+      mobileMenu.classList.add('hidden');
+    }, 500);
+    document.body.style.overflow = '';
+  }
+
+  menuOpen?.addEventListener('click', openMenu);
+  menuClose?.addEventListener('click', closeMenu);
+  
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+</script>
+
+

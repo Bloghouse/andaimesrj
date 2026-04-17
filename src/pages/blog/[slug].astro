@@ -1,0 +1,74 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+	const posts = await getCollection('blog');
+	return posts.map(post => ({
+		params: { slug: post.slug }, props: { post },
+	}));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+const posts = await getCollection('blog');
+const relatedPosts = posts.filter(p => p.slug !== post.slug).slice(0, 2);
+---
+
+<Layout title={`${post.data.title} | Blog Andaime PRO`}>
+	<main>
+		<article class="bg-white">
+			<!-- Header do Post -->
+			<div class="bg-slate-900 py-32 text-center text-white relative overflow-hidden">
+				<div class="container relative z-10">
+					<p class="text-primary font-black uppercase tracking-widest mb-6">Segurança e Dicas</p>
+					<h1 class="text-5xl md:text-7xl font-black leading-tight max-w-5xl mx-auto tracking-tighter">
+						{post.data.title}
+					</h1>
+					<p class="mt-8 text-slate-400 text-lg">
+						Por Equipe Andaime PRO • {post.data.pubDate.toLocaleDateString('pt-BR', { year: 'numeric', month: 'long', day: 'numeric' })}
+					</p>
+				</div>
+				<div class="absolute inset-0 bg-primary/5 opacity-20"></div>
+			</div>
+
+			<div class="container py-32">
+				<div class="grid grid-cols-1 lg:grid-cols-4 gap-24">
+					<!-- Conteúdo -->
+					<div class="lg:col-span-3">
+						<div class="prose prose-2xl prose-slate max-w-none prose-headings:text-slate-900 prose-headings:font-black prose-p:text-slate-600 prose-strong:text-secondary prose-img:rounded-3xl shadow-sm">
+							<Content />
+						</div>
+
+						<!-- CTA Interno do Blog -->
+						<div class="mt-20 p-12 bg-slate-50 border border-slate-100 rounded-3xl flex flex-col md:flex-row items-center gap-10">
+							<div class="text-4xl">💡</div>
+							<div>
+								<h3 class="text-2xl font-black text-slate-900 mb-2">Leve este conhecimento para sua obra</h3>
+								<p class="text-slate-600 text-lg mb-6">Precisa de equipamentos que sigam todas as normas mencionadas acima?</p>
+								<a href="/contato" class="text-secondary font-black text-xl hover:translate-x-2 transition-transform inline-flex items-center gap-2">
+									Pedir Orçamento Agora →
+								</a>
+							</div>
+						</div>
+					</div>
+
+					<!-- Sidebar -->
+					<div class="lg:col-span-1 border-l border-slate-100 pl-12 hidden lg:block">
+						<div class="sticky top-32">
+							<h3 class="text-xl font-black text-slate-900 mb-8 border-b-4 border-primary inline-block">Posts Relacionados</h3>
+							<div class="space-y-12">
+								{relatedPosts.map(p => (
+									<a href={`/blog/${p.slug}`} class="group block space-y-4 text-center">
+										<div class="aspect-video bg-slate-100 rounded-xl group-hover:scale-105 transition-transform"></div>
+										<h4 class="font-bold text-slate-900 leading-tight group-hover:text-secondary transition-colors">{p.data.title}</h4>
+									</a>
+								))}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</article>
+	</main>
+</Layout>

@@ -1,0 +1,104 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Solicitar Orçamento | Andaime PRO - Suporte Especializado">
+	<main>
+		<!-- 1. Hero Minimalista -->
+		<section class="py-32 bg-slate-950 relative overflow-hidden">
+			<div class="container text-center relative z-10">
+				<span class="inline-block px-4 py-2 bg-primary/10 border border-primary/20 text-primary text-sm font-black uppercase tracking-widest rounded-full mb-8">
+					Estamos prontos para atende-lo
+				</span>
+				<h1 class="text-4xl md:text-7xl font-black text-white mb-8 leading-[1.1] tracking-tighter">
+					Pronto para levar sua obra ao <span class="text-primary">próximo nível?</span>
+				</h1>
+				<p class="text-xl md:text-2xl text-gray-100 max-w-2xl mx-auto opacity-90 font-medium leading-relaxed">
+					Atendimento humano, consultoria técnica gratuita e entrega ultra-rápida. Escolha o canal de sua preferência.
+				</p>
+			</div>
+			<!-- Grafismo de fundo -->
+			<div class="absolute inset-0 opacity-10">
+				<div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary via-transparent to-transparent"></div>
+			</div>
+		</section>
+
+		<section class="py-32 bg-white">
+			<div class="container">
+				<div class="grid grid-cols-1 lg:grid-cols-2 gap-24">
+					<!-- Coluna 1: Informações de Contato -->
+					<div>
+						<h2 class="text-4xl font-black text-slate-950 mb-12 tracking-tighter uppercase">Canais de Atendimento</h2>
+						<div class="space-y-12">
+							<div class="flex items-start gap-8 group hover:scale-105 transition-transform duration-300">
+								<div class="w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center text-3xl shadow-lg group-hover:bg-primary group-hover:text-white transition-colors">📍</div>
+								<div>
+									<h3 class="text-xs font-black text-primary uppercase tracking-widest mb-2">Sede Administrativa</h3>
+									<p class="text-xl text-slate-950 font-black">Av. Paulista, 1000 - Bela Vista</p>
+									<p class="text-lg text-slate-600 font-medium">São Paulo - SP, 01310-100</p>
+								</div>
+							</div>
+							<div class="flex items-start gap-8 group hover:scale-105 transition-transform duration-300">
+								<div class="w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center text-3xl shadow-lg group-hover:bg-primary group-hover:text-white transition-colors">📞</div>
+								<div>
+									<h3 class="text-xs font-black text-primary uppercase tracking-widest mb-2">Telefone e WhatsApp</h3>
+									<p class="text-xl text-slate-950 font-black">(11) 3344-5566</p>
+									<p class="text-lg text-slate-600 font-medium">Segunda a Sexta, das 08h às 18h</p>
+								</div>
+							</div>
+							<div class="flex items-start gap-8 group hover:scale-105 transition-transform duration-300">
+								<div class="w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center text-3xl shadow-lg group-hover:bg-primary group-hover:text-white transition-colors">📧</div>
+								<div>
+									<h3 class="text-xs font-black text-primary uppercase tracking-widest mb-2">E-mail Consultivo</h3>
+									<p class="text-xl text-slate-950 font-black">contato@andaimepro.com.br</p>
+									<p class="text-lg text-slate-600 font-medium">Resposta em até 2 horas úteis.</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="mt-20 p-12 bg-slate-950 rounded-[2.5rem] relative overflow-hidden group shadow-2xl shadow-slate-950/20">
+							<div class="relative z-10">
+								<h3 class="text-3xl font-black text-white tracking-tighter mb-2">Unidade Logística SP</h3>
+								<p class="text-primary font-bold text-lg italic">Pronto-atendimento em toda a Grande São Paulo e ABC.</p>
+							</div>
+							<div class="absolute right-0 bottom-0 text-9xl opacity-10 group-hover:scale-125 group-hover:-rotate-12 transition-all duration-500">🏗️</div>
+						</div>
+					</div>
+
+					<!-- Coluna 2: Formulário Premium -->
+					<div class="p-12 bg-white rounded-[3rem] shadow-2xl border border-slate-100 relative overflow-hidden">
+						<!-- Linha decorativa -->
+						<div class="absolute top-0 left-0 w-full h-2 bg-primary"></div>
+						
+						<form class="space-y-8">
+							<div class="space-y-3">
+								<label class="font-black text-slate-950 uppercase text-xs tracking-[0.2em] ml-2">Nome do Responsável</label>
+								<input type="text" required placeholder="Ex: Eng. Roberto Santos" class="w-full p-6 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-4 focus:ring-primary/20 focus:border-primary outline-none transition-all font-medium" />
+							</div>
+							<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+								<div class="space-y-3">
+									<label class="font-black text-slate-950 uppercase text-xs tracking-[0.2em] ml-2">E-mail Corporativo</label>
+									<input type="email" required placeholder="sucesso@obra.com.br" class="w-full p-6 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-4 focus:ring-primary/20 focus:border-primary outline-none transition-all font-medium" />
+								</div>
+								<div class="space-y-3">
+									<label class="font-black text-slate-950 uppercase text-xs tracking-[0.2em] ml-2">WhatsApp / Telefone</label>
+									<input type="tel" required placeholder="(11) 90000-0000" class="w-full p-6 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-4 focus:ring-primary/20 focus:border-primary outline-none transition-all font-medium" />
+								</div>
+							</div>
+							<div class="space-y-3">
+								<label class="font-black text-slate-950 uppercase text-xs tracking-[0.2em] ml-2">O que você precisa?</label>
+								<textarea rows="4" required placeholder="Descreva brevemente o projeto e equipamentos necessários..." class="w-full p-6 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-4 focus:ring-primary/20 focus:border-primary outline-none transition-all font-medium resize-none"></textarea>
+							</div>
+							<button type="submit" class="w-full bg-primary text-white p-8 rounded-[2rem] text-2xl font-black hover:scale-[1.02] active:scale-[0.98] shadow-2xl shadow-primary/30 transition-all flex items-center justify-center gap-4">
+								Enviar e Receber Cotação
+								<span class="text-3xl">🚀</span>
+							</button>
+							<p class="text-center text-slate-400 text-sm font-medium">Seus dados estão protegidos pela LGPD.</p>
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+</Layout>
+

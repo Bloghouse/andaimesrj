@@ -1,0 +1,225 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const servicos = await getCollection('servicos');
+---
+
+<Layout title="Aluguel de Andaimes | Andaime PRO - Segurança em Altura">
+	<main>
+		<!-- 1. Hero Section -->
+		<section class="relative min-h-[85vh] flex items-center bg-slate-950 overflow-hidden">
+			<div class="absolute inset-0 opacity-30">
+				<div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-transparent z-10"></div>
+				<!-- Imagem de fundo simulada com gradiente complexo -->
+				<div class="w-full h-full bg-[url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=2070')] bg-cover bg-center"></div>
+			</div>
+			
+			<div class="container relative z-20 pt-20">
+				<div class="max-w-4xl">
+					<span class="inline-block px-4 py-2 bg-primary/10 border border-primary/20 text-primary text-sm font-black uppercase tracking-widest rounded-full mb-8">
+						🚀 Líder em Locação de Andaimes
+					</span>
+					<h1 class="text-4xl md:text-7xl font-black leading-[1.1] text-white mb-8 tracking-tighter">
+						Estrutura de Elite para a <span class="text-primary">Altura da sua Obra</span>
+					</h1>
+					<p class="text-lg md:text-xl text-gray-100 max-w-2xl leading-relaxed mb-12 opaciy-90">
+						Segurança impecável, entrega em até 2 horas e suporte técnico certificado NR-18. Alugue equipamentos revisados que garantem a produtividade da sua equipe.
+					</p>
+					<div class="flex flex-col sm:flex-row gap-6">
+						<a href="https://wa.me/5511998765432" target="_blank" class="inline-flex items-center justify-center bg-primary text-white px-10 py-6 rounded-2xl text-lg font-black hover:scale-105 active:scale-95 transition-all shadow-2xl shadow-primary/30">
+							Solicitar Orçamento Agora
+						</a>
+						<a href="/servicos" class="inline-flex items-center justify-center bg-white/5 border-2 border-white/20 text-white px-10 py-6 rounded-2xl text-lg font-black hover:bg-white hover:text-secondary hover:scale-105 active:scale-95 transition-all backdrop-blur-sm">
+							Ver Equipamentos
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- 2. Diferenciais -->
+		<section class="bg-white">
+			<div class="container">
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+					<div class="p-10 bg-slate-50 rounded-3xl border border-slate-100 hover:border-primary hover:scale-105 transition-all group">
+						<div class="text-4xl mb-6 group-hover:rotate-12 transition-transform">⚡</div>
+						<h3 class="text-xl font-black text-slate-900 mb-4 tracking-tighter">Entrega em 2h</h3>
+						<p class="text-slate-600 leading-relaxed font-medium">Logística própria ultra-rápida. Sua obra não pode e não vai parar.</p>
+					</div>
+					<div class="p-10 bg-slate-50 rounded-3xl border border-slate-100 hover:border-primary hover:scale-105 transition-all group">
+						<div class="text-4xl mb-6 group-hover:rotate-12 transition-transform">🛡️</div>
+						<h3 class="text-xl font-black text-slate-900 mb-4 tracking-tighter">NR-18 Certificada</h3>
+						<p class="text-slate-600 leading-relaxed font-medium">Equipamentos rigorosamente revisados seguindo todas as normas vigentes.</p>
+					</div>
+					<div class="p-10 bg-slate-50 rounded-3xl border border-slate-100 hover:border-primary hover:scale-105 transition-all group">
+						<div class="text-4xl mb-6 group-hover:rotate-12 transition-transform">💰</div>
+						<h3 class="text-xl font-black text-slate-900 mb-4 tracking-tighter">Preço Justo</h3>
+						<p class="text-slate-600 leading-relaxed font-medium">Condições agressivas para locações de longa duração e grandes projetos.</p>
+					</div>
+					<div class="p-10 bg-slate-50 rounded-3xl border border-slate-100 hover:border-primary hover:scale-105 transition-all group">
+						<div class="text-4xl mb-6 group-hover:rotate-12 transition-transform">📞</div>
+						<h3 class="text-xl font-black text-slate-900 mb-4 tracking-tighter">Plantão 24h</h3>
+						<p class="text-slate-600 leading-relaxed font-medium">Equipe técnica pronta para orientar a montagem em qualquer horário.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- 3. Sobre -->
+		<section class="bg-slate-50 overflow-hidden">
+			<div class="container">
+				<div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+					<div class="relative group">
+						<div class="aspect-square bg-slate-200 rounded-[2.5rem] overflow-hidden shadow-2xl transform group-hover:-rotate-2 transition-transform duration-500">
+							<img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=1000" alt="Equipe Andaime Pro" class="w-full h-full object-cover"/>
+						</div>
+						<div class="absolute -bottom-10 -right-10 w-52 h-52 bg-primary rounded-3xl flex items-center justify-center p-8 shadow-2xl shadow-primary/40 hidden md:flex animate-bounce-slow">
+							<p class="text-white font-black text-center leading-tight">
+								<span class="text-6xl block mb-2 tracking-tighter">15+</span> ANOS NO MERCADO
+							</p>
+						</div>
+					</div>
+					<div>
+						<h2 class="text-4xl md:text-6xl font-black text-slate-950 mb-8 leading-[1.1] tracking-tighter">
+							Especialistas em <span class="text-primary">Segurança</span> e Performance
+						</h2>
+						<p class="text-xl text-slate-600 mb-8 leading-relaxed font-medium">
+							Desde 2009, somos o alicerce de grandes construções. Não apenas alugamos equipamentos: entregamos tranquilidade para o engenheiro e proteção absoluta para o operário.
+						</p>
+						<a href="/sobre" class="inline-flex items-center gap-4 text-primary font-black text-xl group hover:gap-6 transition-all active:scale-95">
+							Conheça nossa História
+							<span class="text-2xl transition-transform group-hover:translate-x-2">→</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- 4. Equipamentos -->
+		<section id="servicos" class="bg-white">
+			<div class="container">
+				<div class="flex flex-col md:flex-row justify-between items-end gap-8 mb-20 text-center md:text-left">
+					<div class="max-w-2xl">
+						<h2 class="text-4xl md:text-6xl font-black text-slate-950 mb-6 tracking-tighter">Equipamentos de Ponta</h2>
+						<p class="text-xl text-slate-600 font-medium">Soluções completas para acesso, escoramento e proteção coletiva.</p>
+					</div>
+					<a href="/servicos" class="bg-slate-950 text-white px-8 py-5 rounded-2xl font-black hover:scale-105 active:scale-95 transition-all shadow-xl shadow-slate-950/20">
+						Ver Catálogo Completo
+					</a>
+				</div>
+				
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+					{servicos.map((servico) => (
+						<a href={`/servicos/${servico.slug}`} class="bg-slate-50 p-12 rounded-[2rem] border border-slate-100 hover:shadow-2xl hover:scale-[1.03] transition-all group">
+							<div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-8 shadow-lg group-hover:bg-primary transition-colors">
+								<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+								</svg>
+							</div>
+							<h3 class="text-2xl font-black text-slate-950 mb-6 tracking-tighter">{servico.data.title}</h3>
+							<p class="text-slate-600 font-medium leading-relaxed mb-8">{servico.data.description}</p>
+							<span class="text-primary font-black uppercase text-sm tracking-wider flex items-center gap-2 group-hover:gap-4 transition-all">
+								Detalhes do Produto <span>→</span>
+							</span>
+						</a>
+					))}
+				</div>
+			</div>
+		</section>
+
+		<!-- 5. Depoimentos (CORREÇÃO DE CONTRASTE) -->
+		<section class="bg-slate-950 text-white">
+			<div class="container text-center">
+				<div class="max-w-3xl mx-auto mb-20">
+					<h2 class="text-4xl md:text-6xl font-black mb-8 tracking-tighter text-primary">Quem Confia</h2>
+					<p class="text-xl text-gray-100 font-medium opacity-90 italic">Parcerias sólidas em cada m² construído.</p>
+				</div>
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+					<div class="bg-white/5 p-12 rounded-[2.5rem] border border-white/10 hover:bg-white/10 transition-all text-left group">
+						<div class="flex gap-1 mb-8">
+							{[1,2,3,4,5].map(() => <span class="text-primary text-xl">★</span>)}
+						</div>
+						<p class="text-lg text-gray-100 font-medium italic leading-relaxed mb-10 group-hover:text-white transition-colors">
+							"A entrega em 2h salvou nosso cronograma. Equipamentos novos e suporte técnico nota 10."
+						</p>
+						<div class="flex items-center gap-4 border-t border-white/10 pt-8">
+							<div class="w-14 h-14 bg-primary/20 rounded-full border border-primary/30"></div>
+							<div>
+								<p class="font-black text-white">Eng. Ricardo Martins</p>
+								<p class="text-sm text-primary font-bold">Construtora Aliança</p>
+							</div>
+						</div>
+					</div>
+					<div class="bg-white/5 p-12 rounded-[2.5rem] border border-white/10 hover:bg-white/10 transition-all text-left group">
+						<div class="flex gap-1 mb-8">
+							{[1,2,3,4,5].map(() => <span class="text-primary text-xl">★</span>)}
+						</div>
+						<p class="text-lg text-gray-100 font-medium italic leading-relaxed mb-10 group-hover:text-white transition-colors">
+							"Locação de andaimes fachadeiros por 4 meses e atendimento excelente. Segurança total na obra."
+						</p>
+						<div class="flex items-center gap-4 border-t border-white/10 pt-8">
+							<div class="w-14 h-14 bg-primary/20 rounded-full border border-primary/30"></div>
+							<div>
+								<p class="font-black text-white">Ana Júlia Santos</p>
+								<p class="text-sm text-primary font-bold">Diretora de Operações</p>
+							</div>
+						</div>
+					</div>
+					<div class="bg-white/5 p-12 rounded-[2.5rem] border border-white/10 hover:bg-white/10 transition-all text-left group">
+						<div class="flex gap-1 mb-8">
+							{[1,2,3,4,5].map(() => <span class="text-primary text-xl">★</span>)}
+						</div>
+						<p class="text-lg text-gray-100 font-medium italic leading-relaxed mb-10 group-hover:text-white transition-colors">
+							"Melhor custo-benefício de SP. Andaimes em perfeito estado, prontos para uso imediato."
+						</p>
+						<div class="flex items-center gap-4 border-t border-white/10 pt-8">
+							<div class="w-14 h-14 bg-primary/20 rounded-full border border-primary/30"></div>
+							<div>
+								<p class="font-black text-white">Marcos Paulo</p>
+								<p class="text-sm text-primary font-bold">Mestre de Obras</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- 6. CTA Final (DADOS REAIS E ESTILO) -->
+		<section class="bg-primary relative overflow-hidden">
+			<!-- Decoração de fundo -->
+			<div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-[600px] h-[600px] bg-white/10 rounded-full blur-3xl"></div>
+			
+			<div class="container text-center relative z-10">
+				<h2 class="text-5xl md:text-8xl font-black text-white mb-10 leading-tight tracking-[calc(-0.05em)]">
+					Vamos subir o nível <br class="hidden md:block"/> da sua <span class="bg-white text-primary px-4 selection:bg-slate-900 selection:text-white">construção?</span>
+				</h2>
+				<p class="text-xl md:text-2xl font-bold text-white mb-16 opacity-95 max-w-2xl mx-auto">
+					Orçamentos imediatos, entrega rápida e os melhores equipamentos do mercado nacional.
+				</p>
+				<div class="flex flex-col md:flex-row justify-center gap-8">
+					<a href="https://wa.me/5511998765432" class="bg-slate-950 text-white px-12 py-8 rounded-[2rem] text-2xl font-black hover:scale-105 active:scale-95 transition-all shadow-2xl flex items-center justify-center gap-4 group">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 group-hover:text-primary transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.588-5.946 0-6.556 5.332-11.888 11.888-11.888 3.176 0 6.161 1.237 8.404 3.483 2.247 2.246 3.483 5.232 3.483 8.405 0 6.556-5.334 11.89-11.888 11.89-2.016 0-3.991-.512-5.748-1.487l-6.238 1.636zm5.066-5.067l.311.185c1.516.902 3.268 1.378 5.071 1.378 5.424 0 9.837-4.412 9.837-9.837 0-2.628-1.024-5.101-2.88-6.958-1.856-1.857-4.327-2.881-6.957-2.881-5.424 0-9.838 4.413-9.838 9.838 0 2.158.7 4.259 2.019 6.002l.232.308-1.002 3.664 3.757-.985zm11.332-5.477c-.285-.144-1.687-.832-1.947-.927-.261-.096-.451-.144-.641.144-.19.287-.736.927-.903 1.118-.166.19-.332.215-.617.072-.285-.144-1.204-.444-2.293-1.415-.848-.756-1.42-1.689-1.586-1.976-.166-.287-.018-.442.125-.584.128-.128.285-.335.428-.503.142-.167.19-.287.285-.479.095-.19.047-.359-.024-.503-.071-.144-.641-1.545-.878-2.12-.231-.559-.465-.483-.64-.492-.166-.008-.356-.01-.546-.01s-.499.072-.76.359c-.261.287-1 0.978-1 2.388s1.021 2.774 1.164 2.965c.143.19 2.009 3.067 4.868 4.301.68.293 1.21.469 1.623.6s.785.056 1.081.012c.33-.049 1.365-.558 1.556-1.099.19-.54.19-1.006.133-1.1-.057-.094-.214-.144-.499-.286z"/></svg>
+						Falar Agora no WhatsApp
+					</a>
+					<a href="tel:551133445566" class="bg-white text-primary px-12 py-8 rounded-[2rem] text-2xl font-black hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-4 shadow-xl">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+						</svg>
+						(11) 3344-5566
+					</a>
+				</div>
+			</div>
+		</section>
+	</main>
+</Layout>
+
+<style>
+	@keyframes bounce-slow {
+		0%, 100% { transform: translateY(0); }
+		50% { transform: translateY(-20px); }
+	}
+	.animate-bounce-slow {
+		animation: bounce-slow 4s infinite ease-in-out;
+	}
+</style>

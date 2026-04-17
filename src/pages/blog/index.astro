@@ -1,0 +1,53 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+---
+
+<Layout title="Blog | Andaime PRO - Inteligência em Segurança">
+	<main>
+		<section class="py-32 bg-slate-50">
+			<div class="container">
+				<div class="max-w-4xl mb-24">
+					<span class="text-primary font-black uppercase tracking-widest mb-6 block">Conhecimento Técnico</span>
+					<h1 class="text-4xl md:text-7xl font-black text-slate-950 mb-8 leading-[1.1] tracking-tighter">
+						Conteúdo para uma <span class="text-primary">Obra Segura</span>.
+					</h1>
+					<p class="text-xl text-slate-600 font-medium leading-relaxed">
+						Artigos técnicos, normas atualizadas e as melhores práticas para o trabalho em altura.
+					</p>
+				</div>
+				
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+					{posts.map((post) => (
+						<article class="group">
+							<a href={`/blog/${post.slug}`} class="block overflow-hidden rounded-[2.5rem] mb-8 shadow-2xl shadow-slate-200">
+								<div class="aspect-video bg-slate-200 group-hover:scale-110 transition-transform duration-700 bg-[url('https://images.unsplash.com/photo-1503387762-592dea58ef23?auto=format&fit=crop&q=80&w=800')] bg-cover bg-center">
+									<div class="absolute inset-0 bg-slate-950/20 group-hover:bg-transparent transition-colors"></div>
+								</div>
+							</a>
+							<div class="space-y-6 px-4">
+								<p class="text-xs font-black text-primary uppercase tracking-[0.2em]">
+									{post.data.pubDate.toLocaleDateString('pt-BR', { year: 'numeric', month: 'long', day: 'numeric' })}
+								</p>
+								<h2 class="text-3xl font-black text-slate-950 hover:text-primary transition-colors tracking-tighter leading-tight">
+									<a href={`/blog/${post.slug}`}>{post.data.title}</a>
+								</h2>
+								<p class="text-lg text-slate-600 leading-relaxed font-medium">
+									{post.data.description}
+								</p>
+								<a href={`/blog/${post.slug}`} class="text-slate-950 font-black inline-flex items-center gap-2 group-hover:gap-4 transition-all">
+									Ler Artigo Completo <span class="text-primary">→</span>
+								</a>
+							</div>
+						</article>
+					))}
+				</div>
+			</div>
+		</section>
+	</main>
+</Layout>
+
