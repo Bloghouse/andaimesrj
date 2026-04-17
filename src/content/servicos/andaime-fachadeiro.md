@@ -1,17 +1,29 @@
 ---
-title: "Andaimes Fachadeiros"
-description: "Equipamento ideal para grandes superfícies e trabalhos de longa duração em fachadas de prédios."
+title: "Andaime Fachadeiro"
+description: "A melhor solução para trabalhos em grandes fachadas no Rio de Janeiro. Estabilidade, amplas plataformas e segurança NR-18."
 order: 2
+characteristics:
+  - "Plataformas de trabalho contínuas"
+  - "Sistema de travamento reforçado"
+  - "Guarda-corpo duplo fixo"
+  - "Escadas de acesso integradas"
+  - "Pisos metálicos antiderrapantes"
+specs:
+  "Largura": "0,75m ou 1,00m"
+  "Capacidade": "200kg por plataforma"
+  "Material": "Aço Galvanizado"
+  "Indicado para": "Obras Externas / Fachadas"
 ---
 
-Os **andaimes fachadeiros** são projetados para permitir a movimentação livre e segura dos operários ao longo de toda a fachada.
+Os **andaimes fachadeiros** são projetados para permitir a movimentação livre e segura dos operários ao longo de toda a extensão de uma fachada. É o equipamento padrão ouro para pinturas prediais, revestimentos e reformas externas.
 
-## Especificações Técnicas
-- **Material:** Aço galvanizado a fogo.
-- **Largura:** 0,75m a 1,00m.
-- **Capacidade:** Suporta até 200kg/m².
+## Performance em Grandes Alturas
+Nossa estrutura fachadeira oferece uma base estável que permite múltiplos níveis de trabalho simultâneos, aumentando drasticamente a produtividade da equipe de obra.
 
-## Benefícios
-- Permite vários níveis de trabalho simultâneos.
-- Sistema de travamento em X para maior rigidez.
-- Guarda-corpo fixo em todas as plataformas.
+## Segurança Inegociável
+- **Estabilidade Lateral:** Travamento em X que impede oscilações.
+- **Proteção Coletiva:** Sistema de guarda-corpo integrado que atende 100% à NR-18.
+- **Acesso Facilitado:** Escadas internas que garantem subida e descida segura dos operários.
+
+## Indicações de Uso
+Especialmente recomendado para prédios residenciais, comerciais e galpões industriais que necessitam de intervenção em toda a sua área externa.
