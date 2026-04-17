@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { SITE_CONFIG } from '../data/config';
 ---
 
 <Layout title="Solicitar Orçamento | Andaime PRO - Suporte Especializado">
@@ -8,7 +9,7 @@ import Layout from '../layouts/Layout.astro';
 		<section class="py-32 bg-slate-950 relative overflow-hidden">
 			<div class="container text-center relative z-10">
 				<span class="inline-block px-4 py-2 bg-primary/10 border border-primary/20 text-primary text-sm font-black uppercase tracking-widest rounded-full mb-8">
-					Estamos prontos para atende-lo
+					Estamos prontos para atendê-lo
 				</span>
 				<h1 class="text-4xl md:text-7xl font-black text-white mb-8 leading-[1.1] tracking-tighter">
 					Pronto para levar sua obra ao <span class="text-primary">próximo nível?</span>
@@ -28,29 +29,29 @@ import Layout from '../layouts/Layout.astro';
 				<div class="grid grid-cols-1 lg:grid-cols-2 gap-24">
 					<!-- Coluna 1: Informações de Contato -->
 					<div>
-						<h2 class="text-4xl font-black text-slate-950 mb-12 tracking-tighter uppercase">Canais de Atendimento</h2>
+						<h2 class="text-4xl font-black text-slate-950 mb-12 tracking-tighter uppercase italic">Canais de Atendimento</h2>
 						<div class="space-y-12">
 							<div class="flex items-start gap-8 group hover:scale-105 transition-transform duration-300">
 								<div class="w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center text-3xl shadow-lg group-hover:bg-primary group-hover:text-white transition-colors">📍</div>
 								<div>
-									<h3 class="text-xs font-black text-primary uppercase tracking-widest mb-2">Sede Administrativa</h3>
-									<p class="text-xl text-slate-950 font-black">Av. Paulista, 1000 - Bela Vista</p>
-									<p class="text-lg text-slate-600 font-medium">São Paulo - SP, 01310-100</p>
+									<h3 class="text-xs font-black text-primary uppercase tracking-widest mb-2 italic">Sede Administrativa</h3>
+									<p class="text-xl text-slate-950 font-black">{SITE_CONFIG.address.street}</p>
+									<p class="text-lg text-slate-600 font-medium">{SITE_CONFIG.address.neighborhood}, {SITE_CONFIG.address.city} - {SITE_CONFIG.address.state}</p>
 								</div>
 							</div>
 							<div class="flex items-start gap-8 group hover:scale-105 transition-transform duration-300">
 								<div class="w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center text-3xl shadow-lg group-hover:bg-primary group-hover:text-white transition-colors">📞</div>
 								<div>
-									<h3 class="text-xs font-black text-primary uppercase tracking-widest mb-2">Telefone e WhatsApp</h3>
-									<p class="text-xl text-slate-950 font-black">(11) 3344-5566</p>
+									<h3 class="text-xs font-black text-primary uppercase tracking-widest mb-2 italic">Telefone e WhatsApp</h3>
+									<p class="text-xl text-slate-950 font-black">{SITE_CONFIG.phone}</p>
 									<p class="text-lg text-slate-600 font-medium">Segunda a Sexta, das 08h às 18h</p>
 								</div>
 							</div>
 							<div class="flex items-start gap-8 group hover:scale-105 transition-transform duration-300">
 								<div class="w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center text-3xl shadow-lg group-hover:bg-primary group-hover:text-white transition-colors">📧</div>
 								<div>
-									<h3 class="text-xs font-black text-primary uppercase tracking-widest mb-2">E-mail Consultivo</h3>
-									<p class="text-xl text-slate-950 font-black">contato@andaimepro.com.br</p>
+									<h3 class="text-xs font-black text-primary uppercase tracking-widest mb-2 italic">E-mail Consultivo</h3>
+									<p class="text-xl text-slate-950 font-black">{SITE_CONFIG.email}</p>
 									<p class="text-lg text-slate-600 font-medium">Resposta em até 2 horas úteis.</p>
 								</div>
 							</div>
@@ -58,8 +59,8 @@ import Layout from '../layouts/Layout.astro';
 
 						<div class="mt-20 p-12 bg-slate-950 rounded-[2.5rem] relative overflow-hidden group shadow-2xl shadow-slate-950/20">
 							<div class="relative z-10">
-								<h3 class="text-3xl font-black text-white tracking-tighter mb-2">Unidade Logística SP</h3>
-								<p class="text-primary font-bold text-lg italic">Pronto-atendimento em toda a Grande São Paulo e ABC.</p>
+								<h3 class="text-3xl font-black text-white tracking-tighter mb-2 italic">Unidade Logística RJ</h3>
+								<p class="text-primary font-bold text-lg italic uppercase tracking-tighter">Pronto-atendimento em toda a Região Metropolitana e Baixada.</p>
 							</div>
 							<div class="absolute right-0 bottom-0 text-9xl opacity-10 group-hover:scale-125 group-hover:-rotate-12 transition-all duration-500">🏗️</div>
 						</div>
@@ -72,21 +73,21 @@ import Layout from '../layouts/Layout.astro';
 						
 						<form class="space-y-8">
 							<div class="space-y-3">
-								<label class="font-black text-slate-950 uppercase text-xs tracking-[0.2em] ml-2">Nome do Responsável</label>
+								<label class="font-black text-slate-950 uppercase text-xs tracking-[0.2em] ml-2 italic">Nome do Responsável</label>
 								<input type="text" required placeholder="Ex: Eng. Roberto Santos" class="w-full p-6 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-4 focus:ring-primary/20 focus:border-primary outline-none transition-all font-medium" />
 							</div>
 							<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 								<div class="space-y-3">
-									<label class="font-black text-slate-950 uppercase text-xs tracking-[0.2em] ml-2">E-mail Corporativo</label>
+									<label class="font-black text-slate-950 uppercase text-xs tracking-[0.2em] ml-2 italic">E-mail Corporativo</label>
 									<input type="email" required placeholder="sucesso@obra.com.br" class="w-full p-6 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-4 focus:ring-primary/20 focus:border-primary outline-none transition-all font-medium" />
 								</div>
 								<div class="space-y-3">
-									<label class="font-black text-slate-950 uppercase text-xs tracking-[0.2em] ml-2">WhatsApp / Telefone</label>
-									<input type="tel" required placeholder="(11) 90000-0000" class="w-full p-6 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-4 focus:ring-primary/20 focus:border-primary outline-none transition-all font-medium" />
+									<label class="font-black text-slate-950 uppercase text-xs tracking-[0.2em] ml-2 italic">WhatsApp / Telefone</label>
+									<input type="tel" required placeholder="(21) 90000-0000" class="w-full p-6 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-4 focus:ring-primary/20 focus:border-primary outline-none transition-all font-medium" />
 								</div>
 							</div>
 							<div class="space-y-3">
-								<label class="font-black text-slate-950 uppercase text-xs tracking-[0.2em] ml-2">O que você precisa?</label>
+								<label class="font-black text-slate-950 uppercase text-xs tracking-[0.2em] ml-2 italic">O que você precisa?</label>
 								<textarea rows="4" required placeholder="Descreva brevemente o projeto e equipamentos necessários..." class="w-full p-6 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-4 focus:ring-primary/20 focus:border-primary outline-none transition-all font-medium resize-none"></textarea>
 							</div>
 							<button type="submit" class="w-full bg-primary text-white p-8 rounded-[2rem] text-2xl font-black hover:scale-[1.02] active:scale-[0.98] shadow-2xl shadow-primary/30 transition-all flex items-center justify-center gap-4">
@@ -101,4 +102,5 @@ import Layout from '../layouts/Layout.astro';
 		</section>
 	</main>
 </Layout>
+
 

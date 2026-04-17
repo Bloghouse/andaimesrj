@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
+import { SITE_CONFIG } from '../../data/config';
 
 export async function getStaticPaths() {
 	const servicosEntries = await getCollection('servicos');
@@ -28,8 +29,8 @@ const { Content } = await entry.render();
 					</svg>
 					Voltar para Galeria
 				</a>
-				<h1 class="text-4xl md:text-7xl font-black mb-8 tracking-tighter leading-[1.1]">{entry.data.title}</h1>
-				<p class="text-xl md:text-2xl text-gray-100 max-w-2xl mx-auto opacity-90 font-medium italic">{entry.data.description}</p>
+				<h1 class="text-4xl md:text-7xl font-black mb-8 tracking-tighter leading-[1.1] text-white">{entry.data.title}</h1>
+				<p class="text-xl md:text-2xl text-gray-100 max-w-2xl mx-auto opacity-90 font-medium italic leading-relaxed">{entry.data.description}</p>
 			</div>
 		</section>
 
@@ -45,7 +46,7 @@ const { Content } = await entry.render();
 						<div class="bg-white p-12 rounded-[2.5rem] shadow-xl shadow-slate-200/50 border border-slate-100">
 							<div class="flex items-center gap-4 mb-10">
 								<div class="w-1.5 h-8 bg-primary rounded-full"></div>
-								<h2 class="text-3xl font-black text-slate-950 uppercase tracking-tighter">Visão Geral</h2>
+								<h2 class="text-3xl font-black text-slate-950 uppercase tracking-tighter italic">Visão Geral</h2>
 							</div>
 							<article class="prose prose-xl prose-slate max-w-none prose-headings:text-slate-950 prose-headings:font-black prose-p:text-slate-600 prose-p:font-medium prose-p:leading-relaxed">
 								<Content />
@@ -55,7 +56,7 @@ const { Content } = await entry.render();
 						<!-- Características -->
 						{entry.data.characteristics && (
 							<div class="bg-white p-12 rounded-[2.5rem] shadow-xl shadow-slate-200/50 border border-slate-100">
-								<h2 class="text-2xl font-black text-slate-950 mb-10 uppercase tracking-tighter">Diferenciais Técnicos</h2>
+								<h2 class="text-2xl font-black text-slate-950 mb-10 uppercase tracking-tighter italic">Diferenciais Técnicos</h2>
 								<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 									{entry.data.characteristics.map(char => (
 										<div class="flex items-center gap-4 bg-slate-50 p-6 rounded-2xl border border-slate-100 group hover:border-primary transition-colors">
@@ -74,7 +75,7 @@ const { Content } = await entry.render();
 						<!-- Especificações -->
 						{entry.data.specs && (
 							<div class="bg-white p-12 rounded-[2.5rem] shadow-xl shadow-slate-200/50 border border-slate-100">
-								<h2 class="text-2xl font-black text-slate-950 mb-10 uppercase tracking-tighter">Ficha Técnica</h2>
+								<h2 class="text-2xl font-black text-slate-950 mb-10 uppercase tracking-tighter italic">Ficha Técnica</h2>
 								<div class="grid grid-cols-2 md:grid-cols-3 gap-8">
 									{Object.entries(entry.data.specs).map(([key, value]) => (
 										<div class="space-y-2 group">
@@ -111,14 +112,14 @@ const { Content } = await entry.render();
 						<div class="bg-white p-10 rounded-[3rem] shadow-2xl border border-slate-100 text-center relative overflow-hidden">
 							<div class="absolute top-0 left-0 w-full h-2 bg-primary"></div>
 							
-							<p class="text-primary font-black text-xs uppercase tracking-[0.2em] mb-4">Central de Negócios</p>
+							<p class="text-primary font-black text-xs uppercase tracking-[0.2em] mb-4 italic">Central de Negócios</p>
 							<h3 class="text-2xl font-black text-slate-950 mb-10 tracking-tighter">Interessado neste <br/> equipamento?</h3>
 							
 							<div class="space-y-6">
-								<a href="https://wa.me/5511998765432" target="_blank" class="w-full bg-slate-950 text-white p-8 rounded-2xl font-black text-xl hover:scale-105 active:scale-95 transition-all shadow-xl shadow-slate-950/20 block">
+								<a href={`https://wa.me/${SITE_CONFIG.whatsapp}`} target="_blank" class="w-full bg-slate-950 text-white p-8 rounded-2xl font-black text-xl hover:scale-105 active:scale-95 transition-all shadow-xl shadow-slate-950/20 block">
 									WhatsApp Oficial
 								</a>
-								<a href="tel:551133445566" class="w-full bg-white border-2 border-slate-950 text-slate-950 p-8 rounded-2xl font-black text-xl hover:bg-slate-950 hover:text-white transition-all block flex items-center justify-center gap-3">
+								<a href={`tel:${SITE_CONFIG.whatsapp}`} class="w-full bg-white border-2 border-slate-950 text-slate-950 p-8 rounded-2xl font-black text-xl hover:bg-slate-950 hover:text-white transition-all block flex items-center justify-center gap-3">
 									<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
 									</svg>
@@ -127,8 +128,8 @@ const { Content } = await entry.render();
 							</div>
 							
 							<div class="mt-12 pt-10 border-t border-slate-100">
-								<p class="text-slate-400 font-bold text-sm mb-4 uppercase tracking-widest">Suporte 24h Especializado</p>
-								<p class="text-3xl font-black text-slate-950 tracking-tighter">(11) 3344-5566</p>
+								<p class="text-slate-400 font-bold text-sm mb-4 uppercase tracking-widest italic">Suporte 24h Especializado</p>
+								<p class="text-3xl font-black text-slate-950 tracking-tighter">{SITE_CONFIG.phone}</p>
 							</div>
 						</div>
 					</div>
@@ -138,4 +139,5 @@ const { Content } = await entry.render();
 		</section>
 	</main>
 </Layout>
+
 
