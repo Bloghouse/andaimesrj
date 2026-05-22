@@ -4,7 +4,7 @@ import Footer from '../components/Footer.astro';
 import SEO from '../components/SEO.astro';
 import SchemaLocalBusiness from '../components/SchemaLocalBusiness.astro';
 import WhatsAppBtn from '../components/WhatsAppBtn.astro';
-import { SITE_CONFIG } from '../data/config';
+import globalData from '../data/pages/globais.json';
 
 interface Props {
 	title?: string;
@@ -12,13 +12,18 @@ interface Props {
 }
 
 const { title, description } = Astro.props;
+
+const siteName = globalData.identity.company_name;
+const primaryColor = globalData.identity.colors.primary;
+const secondaryColor = globalData.identity.colors.secondary;
+const accentColor = globalData.identity.colors.accent;
 ---
 
 <!doctype html>
 <html lang="pt-BR" class="scroll-smooth">
 	<head>
 		<SEO 
-			title={title ? `${title} | ${SITE_CONFIG.name}` : SITE_CONFIG.name}
+			title={title ? `${title} | ${siteName}` : siteName}
 			description={description}
 		/>
 		<SchemaLocalBusiness />
@@ -34,12 +39,15 @@ const { title, description } = Astro.props;
 		<Footer />
 		<WhatsAppBtn />
 		
-		<style is:global>
+		<style is:global define:vars={{ primaryColor, secondaryColor, accentColor }}>
 			@tailwind base;
 			@tailwind components;
 			@tailwind utilities;
 
 			:root {
+				--primary-color: var(--primaryColor);
+				--secondary-color: var(--secondaryColor);
+				--accent-color: var(--accentColor);
 				--accent: 136, 58, 234;
 				--accent-light: 224, 204, 250;
 				--accent-dark: 49, 10, 101;
@@ -51,7 +59,7 @@ const { title, description } = Astro.props;
 				}
 			}
 
-			/* Melhoria de Scrollbar */
+			/* Melhoria de Scrollbar utilizando a cor dinâmica do JSON */
 			::-webkit-scrollbar {
 				width: 10px;
 			}
@@ -59,11 +67,13 @@ const { title, description } = Astro.props;
 				background: #f1f1f1;
 			}
 			::-webkit-scrollbar-thumb {
-				background: #fa4a15;
+				background: var(--primaryColor);
 				border-radius: 5px;
 			}
 			::-webkit-scrollbar-thumb:hover {
-				background: #d33a11;
+				opacity: 0.8;
+				/* Fallback filter se quiser escurecer */
+				background: var(--secondaryColor);
 			}
 
 			html {

@@ -1,0 +1,56 @@
+# Schema JSON: Blog (Artigos Técnicos)
+
+Este arquivo documenta exclusivamente o schema de dados estáticos e de layout do módulo de Blog (Vitrine de Postagens e Leitura Interna) que o CMS irá consumir para alimentar `src/pages/blog/index.astro` e `src/pages/blog/[slug].astro`.
+
+```json
+{
+  "index_page": {
+    "seo": {
+      "meta_title": "Blog | Andaime PRO - Inteligência em Segurança",
+      "meta_description": "Artigos técnicos, normas atualizadas e as melhores práticas para o trabalho em altura."
+    },
+
+    "hero_section": {
+      "bg_color": "bg-slate-50",
+      "badge_text": "Conhecimento Técnico",
+      "title": {
+        "text_normal_1": "Conteúdo para uma ",
+        "text_highlight": "Obra Segura",
+        "text_normal_2": "."
+      },
+      "subtitle": "Artigos técnicos, normas atualizadas e as melhores práticas para o trabalho em altura."
+    },
+
+    "layout_cards": {
+      "enable_image_zoom_hover": true,
+      "enable_overlay_fade_hover": true,
+      "fallback_image_url": "https://images.unsplash.com/photo-1503387762-592dea58ef23?auto=format&fit=crop&q=80&w=800",
+      "read_more_label": "Ler Artigo Completo"
+    }
+  },
+
+  "slug_page": {
+    "hero_section": {
+      "bg_color": "bg-slate-900",
+      "fixed_category_badge": "Segurança e Dicas",
+      "author_name": "Equipe Andaime PRO",
+      "author_prefix_format": "Por {author} • "
+    },
+
+    "internal_cta_box": {
+      "icon_emoji": "💡",
+      "title": "Leve este conhecimento para sua obra",
+      "subtitle": "Precisa de equipamentos que sigam todas as normas mencionadas acima?",
+      "button": {
+        "label": "Pedir Orçamento Agora →",
+        "target_url": "/contato"
+      }
+    },
+
+    "sidebar_sticky": {
+      "title": "Posts Relacionados",
+      "enable_zoom_miniatura": true
+    }
+  }
+}
+```

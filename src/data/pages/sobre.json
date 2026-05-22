@@ -1,0 +1,88 @@
+{
+  "seo": {
+    "meta_title": "Nossa História | Andaime PRO - Tradição e Segurança testeeeee",
+    "meta_description": "Conheça a história da Andaime PRO, nossa missão de segurança e a equipe de elite técnica que lidera nossos projetos. testeeeee"
+  },
+  "hero_section": {
+    "bg_color": "bg-slate-950",
+    "badge_text": "Nossa Trajetória testeeeee",
+    "title": {
+      "text_normal_1": "Construindo as bases do testeeeee",
+      "text_highlight": "progresso testeeeee",
+      "text_normal_2": " desde 2009. testeeeee"
+    },
+    "description": "O que começou como uma pequena operação logística tornou-se a referência máxima em acesso e segurança para os projetos mais audaciosos do país. testeeeee",
+    "enable_geometric_background": true
+  },
+  "mvv_section": {
+    "bg_color": "bg-white",
+    "enable_card_hover_effects": true,
+    "items": [
+      {
+        "icon_emoji": "🚚",
+        "title": "Nossa Missão testeeeee",
+        "description": "Prover soluções de acesso seguras e eficientes, garantindo que cada trabalhador retorne para casa com absoluta segurança ao final do dia. testeeeee"
+      },
+      {
+        "icon_emoji": "⏱️",
+        "title": "Nossa Visão testeeeee",
+        "description": "Ser a primeira escolha em locação de andaimes no Brasil, reconhecida pela inovação tecnológica e excelência inabalável no suporte. testeeeee"
+      },
+      {
+        "icon_emoji": "🦺",
+        "title": "Nossos Valores testeeeee",
+        "description": "Segurança inegociável, pontualidade de elite, ética absoluta nas relações e compromisso total com o sucesso do cliente. testeeeee"
+      }
+    ]
+  },
+  "security_section": {
+    "bg_color": "bg-slate-50 ",
+    "title": {
+      "text_normal_1": "Segurança testeeeee",
+      "text_highlight": "NR-18 testeeeee",
+      "text_normal_2": " no DNA testeeeee"
+    },
+    "intro_text": "Não apenas seguimos as normas vigentes; nós as redefinimos. Cada componente da Andaime PRO passa por um rigoroso checklist antes de cada locação. testeeeee",
+    "bullet_points": [
+      "Manutenção preventiva sistemática em 100% do estoque. testeeeee",
+      "Certificação de origem e ensaios de carga periódicos. testeeeee",
+      "Consultoria técnica gratuita para dimensionamento de projetos. testeeeee",
+      "testeeeee",
+      "testeeeee",
+      "testeeeee"
+    ],
+    "illustration": {
+      "image_url": "/images/about-security.webp",
+      "enable_zoom_hover": true,
+      "enable_overlay_fade_hover": true
+    }
+  },
+  "team_section": {
+    "bg_color": "bg-white",
+    "title": "Elite Técnica  testeeeee",
+    "subtitle": "Nossa equipe não é formada apenas por vendedores, mas por especialistas em engenharia e segurança que vivem o dia a dia do canteiro de obras. testeeeee",
+    "enable_grayscale_hover": true,
+    "members": [
+      {
+        "photo_url": "/images/team/member-0.jpg",
+        "area_name": "ENGENHARIA testeeeee"
+      },
+      {
+        "photo_url": "/images/team/member-1.jpg",
+        "area_name": "LOGÍSTICA testeeeee"
+      },
+      {
+        "photo_url": "/images/team/member-2.jpg",
+        "area_name": "SUPORTE TÉCNICO testeeeee"
+      },
+      {
+        "photo_url": "/images/team/member-3.jpg",
+        "area_name": "COMERCIAL testeeeee"
+      },
+      {
+        "photo_url": "/images/team/member-4.jpg",
+        "area_name": "testeeeeetesteeeeetesteeeeetesteeeeetesteeeee"
+      }
+    ]
+  }
+}

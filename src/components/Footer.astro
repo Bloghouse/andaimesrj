@@ -1,74 +1,74 @@
 ---
-import { SITE_CONFIG } from '../data/config';
+import fs from 'node:fs';
+import path from 'node:path';
+
+// Leitura dinamica em runtime para evitar caches agressivos do Vite
+const globaisPath = path.resolve('src/data/pages/globais.json');
+const globalData = JSON.parse(fs.readFileSync(globaisPath, 'utf-8'));
+
 const currentYear = new Date().getFullYear();
+
+const copyrightText = (globalData.footer_section.copyright_format || '© {year} ANDAIME PRO. Todos os direitos reservados.')
+  .replace('{year}', currentYear.toString());
 ---
 <footer class="pt-24 pb-12 bg-slate-950 border-t border-white/5 text-white">
   <div class="container">
     <div class="grid grid-cols-1 md:grid-cols-4 gap-16 mb-20">
       <div class="md:col-span-2">
-        <div class="flex items-center gap-3 mb-8 group cursor-default">
-          <div class="w-12 h-12 bg-primary rounded-xl flex items-center justify-center shadow-lg shadow-primary/20 group-hover:rotate-6 transition-transform">
-            <span class="font-black text-white text-2xl">A</span>
-          </div>
-          <span class="text-2xl font-black tracking-tighter text-white uppercase italic">ANDAIME<span class="text-primary">PRO</span></span>
+        <div class="flex items-center mb-8">
+           <img src={globalData.identity.logo_url} alt={globalData.identity.company_name} class="h-16 md:h-20 w-auto object-contain brightness-0 invert" />
         </div>
         <p class="text-gray-400 max-w-sm leading-relaxed mb-8 text-lg font-medium">
-          A maior autoridade em locação de equipamentos para trabalho em altura. Segurança certificada e logística de elite para sua obra.
+          {globalData.footer_section.description_text}
         </p>
         <div class="flex gap-4">
-           <a href={SITE_CONFIG.social.instagram} target="_blank" class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-primary transition-all hover:scale-110 active:scale-95">
+           <a href={globalData.contact_info.social.instagram} target="_blank" class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-primary transition-all hover:scale-110 active:scale-95">
              <span class="sr-only">Instagram</span>
              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
            </a>
         </div>
       </div>
       <div>
-        <h4 class="text-xl font-black text-white mb-8 tracking-tighter uppercase italic">Navegação</h4>
+        <h4 class="text-xl font-black text-white mb-8 tracking-tighter uppercase italic">{globalData.footer_section.nav_column_title}</h4>
         <ul class="space-y-4">
-          <li><a href="/servicos" class="text-gray-400 hover:text-primary transition-all flex items-center gap-2 group">
-            <span class="w-1.5 h-1.5 bg-primary rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
-            Equipamentos
-          </a></li>
-          <li><a href="/blog" class="text-gray-400 hover:text-primary transition-all flex items-center gap-2 group">
-            <span class="w-1.5 h-1.5 bg-primary rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
-            Segurança (Blog)
-          </a></li>
-          <li><a href="/contato" class="text-gray-400 hover:text-primary transition-all flex items-center gap-2 group">
-            <span class="w-1.5 h-1.5 bg-primary rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
-            Orçamentos
-          </a></li>
-          <li><a href="/sobre" class="text-gray-400 hover:text-primary transition-all flex items-center gap-2 group">
-            <span class="w-1.5 h-1.5 bg-primary rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
-            Sobre Nós
-          </a></li>
+          {(globalData.footer_section.nav_links || [
+            { label: 'Equipamentos', url: '/servicos' },
+            { label: 'Segurança (Blog)', url: '/blog' },
+            { label: 'Orçamentos', url: '/contato' },
+            { label: 'Sobre Nós', url: '/sobre' }
+          ]).map((link) => (
+            <li>
+              <a href={link.url} class="text-gray-400 hover:text-primary transition-all flex items-center gap-2 group">
+                <span class="w-1.5 h-1.5 bg-primary rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                {link.label}
+              </a>
+            </li>
+          ))}
         </ul>
       </div>
       <div>
-        <h4 class="text-xl font-black text-white mb-8 tracking-tighter uppercase italic">Contato</h4>
+        <h4 class="text-xl font-black text-white mb-8 tracking-tighter uppercase italic">{globalData.footer_section.contact_column_title}</h4>
         <div class="space-y-4 text-gray-400 font-medium">
           <p class="flex items-center gap-3">
-             <span class="text-primary font-black">📞</span> {SITE_CONFIG.phone}
+             <span class="text-primary font-black">📞</span> {globalData.contact_info.phone}
           </p>
           <p class="flex items-center gap-3">
-             <span class="text-primary font-black">📧</span> {SITE_CONFIG.email}
+             <span class="text-primary font-black">📧</span> {globalData.contact_info.email}
           </p>
           <div class="mt-8 text-sm opacity-60 leading-relaxed">
-            <p>{SITE_CONFIG.address.street} - {SITE_CONFIG.address.neighborhood}</p>
-            <p>{SITE_CONFIG.address.city} - {SITE_CONFIG.address.state}</p>
+            <p>{globalData.contact_info.address.street} - {globalData.contact_info.address.neighborhood}</p>
+            <p>{globalData.contact_info.address.city} - {globalData.contact_info.address.state}</p>
           </div>
         </div>
       </div>
     </div>
     <div class="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
-      <p class="text-sm text-gray-500 font-medium">
-        © {currentYear} <span class="text-white font-black">ANDAIME PRO</span>. Todos os direitos reservados.
-      </p>
+      <p class="text-sm text-gray-500 font-medium" set:html={copyrightText} />
       <div class="flex gap-8">
-        <a href="/privacidade" class="text-xs text-gray-500 hover:text-white uppercase tracking-widest font-black transition-colors">Privacidade</a>
-        <a href="/termos" class="text-xs text-gray-500 hover:text-white uppercase tracking-widest font-black transition-colors">Termos de Uso</a>
+        {globalData.footer_section.legal_links.map((link) => (
+          <a href={link.url} class="text-xs text-gray-500 hover:text-white uppercase tracking-widest font-black transition-colors">{link.label}</a>
+        ))}
       </div>
     </div>
   </div>
 </footer>
-
-

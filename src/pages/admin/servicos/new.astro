@@ -1,0 +1,8 @@
+---
+export const prerender = false;
+import AdminLayout from '../../../layouts/AdminLayout.astro';
+import ServicoEditor from '../../../components/admin/ServicoEditor';
+---
+<AdminLayout title="Novo Serviço" activeSection="servicos">
+    <ServicoEditor filePath={null} client:load />
+</AdminLayout>

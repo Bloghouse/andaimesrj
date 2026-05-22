@@ -1,0 +1,120 @@
+{
+  "seo": {
+    "meta_title": " Aluguel de Andaimes | Andaime PRO - Segurança em Altura ",
+    "meta_description": "Sua obra no RJ merece equipamentos certificados NR-18 e logística de elite. Entrega garantida em até 2 horas."
+  },
+  "hero_section": {
+    "bg_image_url": "/images/hero-bg.webp",
+    "badge_text": "🏗️ Locação de Andaimes no Rio de Janeiro testeee",
+    "title": {
+      "text_white_1": "Segurança Absoluta testeee",
+      "text_white_2": "para atingir o testeeee",
+      "text_highlight": "Topo do Projeto testeeeeeee"
+    },
+    "description": "Sua obra no RJ merece equipamentos certificados NR-18 e logística de elite. Entrega garantida em até 2 horas com suporte técnico especializado 24h. testeeeee",
+    "primary_btn": {
+      "label": "Solicitar Orçamento Agora testeeee"
+    },
+    "secondary_btn": {
+      "label": "Ver Equipamentos testeee",
+      "url": "/blog"
+    }
+  },
+  "differentials_section": {
+    "enable_icon_rotation_hover": true,
+    "items": [
+      {
+        "icon_emoji": "🧱",
+        "title": "Entrega em 2h testeeee",
+        "description": "Logística própria ultra-rápida. Sua obra não pode e não vai parar. testeeeee"
+      },
+      {
+        "icon_emoji": "⚙️",
+        "title": "NR-18 Certificada testeeeee",
+        "description": "Equipamentos rigorosamente revisados seguindo todas as normas vigentes. testeeeeee"
+      },
+      {
+        "icon_emoji": "🔧",
+        "title": "Preço Justo testeeeee",
+        "description": "Condições agressivas para locações de longa duração e grandes projetos. testeeeee"
+      },
+      {
+        "icon_emoji": "🚚",
+        "title": "Plantão 24h testeeeeee ",
+        "description": "Equipe técnica pronta para orientar a montagem em qualquer horário. testeeeeeeee"
+      }
+    ]
+  },
+  "about_section": {
+    "bg_color": "bg-slate-50",
+    "main_image_url": "/images/about-home.webp",
+    "floating_badge": {
+      "visible": true,
+      "number": "1577+",
+      "text": "ANOS NO MERCADOooooo"
+    },
+    "title": {
+      "text_normal_1": "Especialistas em testeee",
+      "text_highlight": "Segurança testeeee",
+      "text_normal_2": "e Performance testeeee"
+    },
+    "description": "Desde 2009, somos o alicerce de grandes construções. Não apenas alugamos equipamentos: entregamos tranquilidade para o engenheiro e proteção absoluta para o operário. testeeeee",
+    "link_cta": {
+      "label": "Conheça nossa História",
+      "url": "/sobre"
+    }
+  },
+  "services_preview_section": {
+    "title": "Equipamentos de Ponta ttesteeeee",
+    "subtitle": "testeeeee Soluções completas para acesso, escoramento e proteção coletiva.",
+    "top_btn": {
+      "label": "Ver Catálogo Completo testeeeee",
+      "url": "/blog"
+    },
+    "card_link_label": "Detalhes do Produto testeeeee"
+  },
+  "testimonials_section": {
+    "title_highlight": "Quem Confia testeeeee",
+    "subtitle": "Parcerias sólidas em cada m² construído. testeeeee",
+    "items": [
+      {
+        "avatar_url": "/images/testimonials/avatar-0.jpg",
+        "quote": " testeeeee A entrega em 2h salvou nosso cronograma. Equipamentos novos e suporte técnico nota 10.",
+        "author": "Eng. Ricardo Martins testeeeee",
+        "company_role": "testeeeee Construtora Aliança testeeeee",
+        "stars_count": 5
+      },
+      {
+        "avatar_url": "/images/testimonials/avatar-1.jpg",
+        "quote": "Locação de andaimes fachadeiros por 4 meses e atendimento excelente. Segurança total na obra. testeeeee",
+        "author": "Ana Júlia Santos testeeeee",
+        "company_role": "Diretora de Operações testeeeee",
+        "stars_count": 2
+      },
+      {
+        "avatar_url": "/images/testimonials/avatar-2.jpg",
+        "quote": "Melhor custo-benefício de SP. Andaimes em perfeito estado, prontos para uso imediato. testeeeee",
+        "author": "Marcos Paulo testeeeee",
+        "company_role": "Mestre de Obras testeeeee",
+        "stars_count": 4
+      },
+      {
+        "avatar_url": "/images/testimonials/avatar-3.jpg",
+        "quote": "testeeeee",
+        "author": "testeeeee",
+        "company_role": "testeeeee",
+        "stars_count": 2
+      }
+    ]
+  },
+  "footer_cta_section": {
+    "title": {
+      "text_normal_1": "Vamos subir o nível testeeeee",
+      "text_normal_2": "da sua testeeeee",
+      "text_highlight": "construção? testeeeee"
+    },
+    "description": "Orçamentos imediatos, entrega rápida e os melhores equipamentos do mercado nacional. testeeeee",
+    "whatsapp_btn_label": "Falar Agora no WhatsApp testeeeee",
+    "phone_btn_label_prefix": "Ligar: testeeeee"
+  }
+}

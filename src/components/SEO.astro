@@ -1,5 +1,5 @@
 ---
-import { SITE_CONFIG } from '../data/config';
+import globalData from '../data/pages/globais.json';
 
 interface Props {
   title?: string;
@@ -9,17 +9,20 @@ interface Props {
 }
 
 const {
-  title = SITE_CONFIG.name,
-  description = SITE_CONFIG.seo.description,
+  title = globalData.identity.company_name,
+  description = globalData.global_seo.default_meta_description,
   image = "/og-image.jpg", // Placeholder para imagem OG
   canonicalURL = new URL(Astro.url.pathname, Astro.site),
 } = Astro.props;
+
+const faviconUrl = globalData.identity.favicon_url || "/favicon.svg";
+const faviconType = faviconUrl.endsWith('.svg') ? 'image/svg+xml' : 'image/png';
 ---
 
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" type={faviconType} href={faviconUrl} />
 <meta name="generator" content={Astro.generator} />
 
 <!-- Canonical URL -->
@@ -29,7 +32,7 @@ const {
 <title>{title}</title>
 <meta name="title" content={title} />
 <meta name="description" content={description} />
-<meta name="keywords" content={SITE_CONFIG.seo.keywords} />
+<meta name="keywords" content={globalData.global_seo.default_meta_keywords} />
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />

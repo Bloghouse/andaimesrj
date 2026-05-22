@@ -1,0 +1,55 @@
+{
+  "seo": {
+    "meta_title": "testeeeee Solicitar Orçamento | Andaime PRO - Suporte Especializado",
+    "meta_description": "testeeeee Entre em contato conosco e solicite um orçamento rápido de locação de andaimes certificados."
+  },
+  "hero_section": {
+    "bg_color": "bg-slate-950",
+    "badge_text": "Estamos prontos para atendê-lo testeeeee",
+    "title": {
+      "text_normal_1": "Pronto para levar sua obra ao  testeeeee",
+      "text_highlight": "próximo nível? testeeeee"
+    },
+    "description": "Atendimento humano, consultoria técnica gratuita e entrega ultra-rápida. Escolha o canal de sua preferência. testeeeee",
+    "enable_background_glow": true
+  },
+  "channels_section": {
+    "column_title": "Canais de Atendimento testeeeee",
+    "items_info": {
+      "sede_label": "Sede Administrativa testeeeee",
+      "sede_emoji": "🚚",
+      "telefone_label": "Telefone e WhatsApp testeeeee",
+      "telefone_emoji": "🤝",
+      "telefone_subtext": "Segunda a Sexta, das 08h às 18h testeeeee",
+      "email_label": "E-mail Consultivo testeeeee",
+      "email_emoji": "🏆",
+      "email_subtext": "Resposta em até 2 horas úteis. testeeeee"
+    },
+    "highlight_card": {
+      "bg_color": "bg-slate-950",
+      "title": "Unidade Logística RJ testeeeee",
+      "subtitle_text": "testeeeee Pronto-atendimento em toda a Região Metropolitana e Baixada.",
+      "decor_emoji": "💡",
+      "enable_rotate_hover": false
+    }
+  },
+  "form_section": {
+    "form_labels": {
+      "field_name": "Nome do Responsável testeeeee",
+      "field_email": "E-mail Corporativo testeeeee",
+      "field_phone": "WhatsApp / Telefone testeeeee",
+      "field_message": "O que você precisa? testeeeee"
+    },
+    "form_placeholders": {
+      "field_name": "Ex: Eng. Roberto Santos testeeeee",
+      "field_email": "sucesso@obra.com.br testeeeee",
+      "field_phone": "(21) 90000-0000 testeeeee",
+      "field_message": "testeeeee Descreva brevemente o projeto e equipamentos necessários..."
+    },
+    "submit_button": {
+      "label_text": "Enviar e Receber Cotação testeeeee",
+      "decor_emoji": "🛡️"
+    },
+    "footer_disclaimer": "Seus dados estão protegidos pela LGPD. testeeeee"
+  }
+}

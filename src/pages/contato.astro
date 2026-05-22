@@ -1,27 +1,35 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { SITE_CONFIG } from '../data/config';
+import { readData } from '../lib/readData';
+
+const pageData = readData('pages/contato.json');
+const globalData = readData('pages/globais.json');
+
+const info = globalData.contact_info;
+const address = info.address;
 ---
 
-<Layout title="Solicitar Orçamento | Andaime PRO - Suporte Especializado">
+<Layout title={pageData.seo.meta_title} description={pageData.seo.meta_description}>
 	<main>
 		<!-- 1. Hero Minimalista -->
-		<section class="py-32 bg-slate-950 relative overflow-hidden">
+		<section class={`py-32 relative overflow-hidden ${pageData.hero_section.bg_color}`}>
 			<div class="container text-center relative z-10">
 				<span class="inline-block px-4 py-2 bg-primary/10 border border-primary/20 text-primary text-sm font-black uppercase tracking-widest rounded-full mb-8">
-					Estamos prontos para atendê-lo
+					{pageData.hero_section.badge_text}
 				</span>
 				<h1 class="text-4xl md:text-7xl font-black text-white mb-8 leading-[1.1] tracking-tighter">
-					Pronto para levar sua obra ao <span class="text-primary">próximo nível?</span>
+					{pageData.hero_section.title.text_normal_1}<span class="text-primary">{pageData.hero_section.title.text_highlight}</span>
 				</h1>
 				<p class="text-xl md:text-2xl text-gray-100 max-w-2xl mx-auto opacity-90 font-medium leading-relaxed">
-					Atendimento humano, consultoria técnica gratuita e entrega ultra-rápida. Escolha o canal de sua preferência.
+					{pageData.hero_section.description}
 				</p>
 			</div>
-			<!-- Grafismo de fundo -->
-			<div class="absolute inset-0 opacity-10">
-				<div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary via-transparent to-transparent"></div>
-			</div>
+			<!-- Grafismo de fundo condicional -->
+			{pageData.hero_section.enable_background_glow && (
+				<div class="absolute inset-0 opacity-10">
+					<div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary via-transparent to-transparent"></div>
+				</div>
+			)}
 		</section>
 
 		<section class="py-32 bg-white">
@@ -29,40 +37,54 @@ import { SITE_CONFIG } from '../data/config';
 				<div class="grid grid-cols-1 lg:grid-cols-2 gap-24">
 					<!-- Coluna 1: Informações de Contato -->
 					<div>
-						<h2 class="text-4xl font-black text-slate-950 mb-12 tracking-tighter uppercase italic">Canais de Atendimento</h2>
+						<h2 class="text-4xl font-black text-slate-950 mb-12 tracking-tighter uppercase italic">
+							{pageData.channels_section.column_title}
+						</h2>
 						<div class="space-y-12">
+							<!-- Endereço -->
 							<div class="flex items-start gap-8 group hover:scale-105 transition-transform duration-300">
-								<div class="w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center text-3xl shadow-lg group-hover:bg-primary group-hover:text-white transition-colors">📍</div>
+								<div class="w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center text-3xl shadow-lg group-hover:bg-primary group-hover:text-white transition-colors">
+									{pageData.channels_section.items_info.sede_emoji || '📍'}
+								</div>
 								<div>
-									<h3 class="text-xs font-black text-primary uppercase tracking-widest mb-2 italic">Sede Administrativa</h3>
-									<p class="text-xl text-slate-950 font-black">{SITE_CONFIG.address.street}</p>
-									<p class="text-lg text-slate-600 font-medium">{SITE_CONFIG.address.neighborhood}, {SITE_CONFIG.address.city} - {SITE_CONFIG.address.state}</p>
+									<h3 class="text-xs font-black text-primary uppercase tracking-widest mb-2 italic">{pageData.channels_section.items_info.sede_label}</h3>
+									<p class="text-xl text-slate-950 font-black">{address.street}</p>
+									<p class="text-lg text-slate-600 font-medium">{address.neighborhood}, {address.city} - {address.state}</p>
 								</div>
 							</div>
+							<!-- Telefone -->
 							<div class="flex items-start gap-8 group hover:scale-105 transition-transform duration-300">
-								<div class="w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center text-3xl shadow-lg group-hover:bg-primary group-hover:text-white transition-colors">📞</div>
+								<div class="w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center text-3xl shadow-lg group-hover:bg-primary group-hover:text-white transition-colors">
+									{pageData.channels_section.items_info.telefone_emoji || '📞'}
+								</div>
 								<div>
-									<h3 class="text-xs font-black text-primary uppercase tracking-widest mb-2 italic">Telefone e WhatsApp</h3>
-									<p class="text-xl text-slate-950 font-black">{SITE_CONFIG.phone}</p>
-									<p class="text-lg text-slate-600 font-medium">Segunda a Sexta, das 08h às 18h</p>
+									<h3 class="text-xs font-black text-primary uppercase tracking-widest mb-2 italic">{pageData.channels_section.items_info.telefone_label}</h3>
+									<p class="text-xl text-slate-950 font-black">{info.phone}</p>
+									<p class="text-lg text-slate-600 font-medium">{pageData.channels_section.items_info.telefone_subtext}</p>
 								</div>
 							</div>
+							<!-- E-mail -->
 							<div class="flex items-start gap-8 group hover:scale-105 transition-transform duration-300">
-								<div class="w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center text-3xl shadow-lg group-hover:bg-primary group-hover:text-white transition-colors">📧</div>
+								<div class="w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center text-3xl shadow-lg group-hover:bg-primary group-hover:text-white transition-colors">
+									{pageData.channels_section.items_info.email_emoji || '📧'}
+								</div>
 								<div>
-									<h3 class="text-xs font-black text-primary uppercase tracking-widest mb-2 italic">E-mail Consultivo</h3>
-									<p class="text-xl text-slate-950 font-black">{SITE_CONFIG.email}</p>
-									<p class="text-lg text-slate-600 font-medium">Resposta em até 2 horas úteis.</p>
+									<h3 class="text-xs font-black text-primary uppercase tracking-widest mb-2 italic">{pageData.channels_section.items_info.email_label}</h3>
+									<p class="text-xl text-slate-950 font-black">{info.email}</p>
+									<p class="text-lg text-slate-600 font-medium">{pageData.channels_section.items_info.email_subtext}</p>
 								</div>
 							</div>
 						</div>
 
-						<div class="mt-20 p-12 bg-slate-950 rounded-[2.5rem] relative overflow-hidden group shadow-2xl shadow-slate-950/20">
+						<!-- Card Destaque Unidade Logística -->
+						<div class={`mt-20 p-12 rounded-[2.5rem] relative overflow-hidden group shadow-2xl shadow-slate-950/20 ${pageData.channels_section.highlight_card.bg_color}`}>
 							<div class="relative z-10">
-								<h3 class="text-3xl font-black text-white tracking-tighter mb-2 italic">Unidade Logística RJ</h3>
-								<p class="text-primary font-bold text-lg italic uppercase tracking-tighter">Pronto-atendimento em toda a Região Metropolitana e Baixada.</p>
+								<h3 class="text-3xl font-black text-white tracking-tighter mb-2 italic">{pageData.channels_section.highlight_card.title}</h3>
+								<p class="text-primary font-bold text-lg italic uppercase tracking-tighter">{pageData.channels_section.highlight_card.subtitle_text}</p>
 							</div>
-							<div class="absolute right-0 bottom-0 text-9xl opacity-10 group-hover:scale-125 group-hover:-rotate-12 transition-all duration-500">🏗️</div>
+							<div class={`absolute right-0 bottom-0 text-9xl opacity-10 transition-all duration-500 ${pageData.channels_section.highlight_card.enable_rotate_hover ? 'group-hover:scale-125 group-hover:-rotate-12' : ''}`}>
+								{pageData.channels_section.highlight_card.decor_emoji}
+							</div>
 						</div>
 					</div>
 
@@ -73,28 +95,42 @@ import { SITE_CONFIG } from '../data/config';
 						
 						<form class="space-y-8">
 							<div class="space-y-3">
-								<label class="font-black text-slate-950 uppercase text-xs tracking-[0.2em] ml-2 italic">Nome do Responsável</label>
-								<input type="text" required placeholder="Ex: Eng. Roberto Santos" class="w-full p-6 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-4 focus:ring-primary/20 focus:border-primary outline-none transition-all font-medium" />
+								<label class="font-black text-slate-950 uppercase text-xs tracking-[0.2em] ml-2 italic">
+									{pageData.form_section.form_labels.field_name}
+								</label>
+								<input type="text" required placeholder={pageData.form_section.form_placeholders.field_name} class="w-full p-6 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-4 focus:ring-primary/20 focus:border-primary outline-none transition-all font-medium" />
 							</div>
+							
 							<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 								<div class="space-y-3">
-									<label class="font-black text-slate-950 uppercase text-xs tracking-[0.2em] ml-2 italic">E-mail Corporativo</label>
-									<input type="email" required placeholder="sucesso@obra.com.br" class="w-full p-6 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-4 focus:ring-primary/20 focus:border-primary outline-none transition-all font-medium" />
+									<label class="font-black text-slate-950 uppercase text-xs tracking-[0.2em] ml-2 italic">
+										{pageData.form_section.form_labels.field_email}
+									</label>
+									<input type="email" required placeholder={pageData.form_section.form_placeholders.field_email} class="w-full p-6 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-4 focus:ring-primary/20 focus:border-primary outline-none transition-all font-medium" />
 								</div>
 								<div class="space-y-3">
-									<label class="font-black text-slate-950 uppercase text-xs tracking-[0.2em] ml-2 italic">WhatsApp / Telefone</label>
-									<input type="tel" required placeholder="(21) 90000-0000" class="w-full p-6 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-4 focus:ring-primary/20 focus:border-primary outline-none transition-all font-medium" />
+									<label class="font-black text-slate-950 uppercase text-xs tracking-[0.2em] ml-2 italic">
+										{pageData.form_section.form_labels.field_phone}
+									</label>
+									<input type="tel" required placeholder={pageData.form_section.form_placeholders.field_phone} class="w-full p-6 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-4 focus:ring-primary/20 focus:border-primary outline-none transition-all font-medium" />
 								</div>
 							</div>
+							
 							<div class="space-y-3">
-								<label class="font-black text-slate-950 uppercase text-xs tracking-[0.2em] ml-2 italic">O que você precisa?</label>
-								<textarea rows="4" required placeholder="Descreva brevemente o projeto e equipamentos necessários..." class="w-full p-6 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-4 focus:ring-primary/20 focus:border-primary outline-none transition-all font-medium resize-none"></textarea>
+								<label class="font-black text-slate-950 uppercase text-xs tracking-[0.2em] ml-2 italic">
+									{pageData.form_section.form_labels.field_message}
+								</label>
+								<textarea rows="4" required placeholder={pageData.form_section.form_placeholders.field_message} class="w-full p-6 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-4 focus:ring-primary/20 focus:border-primary outline-none transition-all font-medium resize-none"></textarea>
 							</div>
+							
 							<button type="submit" class="w-full bg-primary text-white p-8 rounded-[2rem] text-2xl font-black hover:scale-[1.02] active:scale-[0.98] shadow-2xl shadow-primary/30 transition-all flex items-center justify-center gap-4">
-								Enviar e Receber Cotação
-								<span class="text-3xl">🚀</span>
+								{pageData.form_section.submit_button.label_text}
+								<span class="text-3xl">{pageData.form_section.submit_button.decor_emoji}</span>
 							</button>
-							<p class="text-center text-slate-400 text-sm font-medium">Seus dados estão protegidos pela LGPD.</p>
+							
+							<p class="text-center text-slate-400 text-sm font-medium">
+								{pageData.form_section.footer_disclaimer}
+							</p>
 						</form>
 					</div>
 				</div>
@@ -102,5 +138,3 @@ import { SITE_CONFIG } from '../data/config';
 		</section>
 	</main>
 </Layout>
-
-

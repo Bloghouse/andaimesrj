@@ -1,0 +1,11 @@
+---
+export const prerender = false;
+import AdminLayout from '../../../layouts/AdminLayout.astro';
+import ServicoEditor from '../../../components/admin/ServicoEditor';
+
+const filePath = Astro.url.searchParams.get('file');
+if (!filePath) return Astro.redirect('/admin/servicos');
+---
+<AdminLayout title="Editar Serviço" activeSection="servicos">
+    <ServicoEditor filePath={filePath} client:load />
+</AdminLayout>

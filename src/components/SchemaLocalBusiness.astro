@@ -1,20 +1,21 @@
 ---
-import { SITE_CONFIG } from '../data/config';
+import globalData from '../data/pages/globais.json';
+const info = globalData.contact_info;
 
 const schema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "name": SITE_CONFIG.name,
-  "image": `${SITE_CONFIG.domain}/logo.png`,
-  "@id": `${SITE_CONFIG.domain}`,
-  "url": SITE_CONFIG.domain,
-  "telephone": SITE_CONFIG.phone,
+  "name": globalData.identity.company_name,
+  "image": `${info.domain}${globalData.identity.logo_url}`,
+  "@id": `${info.domain}`,
+  "url": info.domain,
+  "telephone": info.phone,
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": SITE_CONFIG.address.street,
-    "addressLocality": SITE_CONFIG.address.city,
-    "addressRegion": SITE_CONFIG.address.state,
-    "postalCode": SITE_CONFIG.address.zip,
+    "streetAddress": info.address.street,
+    "addressLocality": info.address.city,
+    "addressRegion": info.address.state,
+    "postalCode": info.address.zip,
     "addressCountry": "BR"
   },
   "geo": {
@@ -35,8 +36,8 @@ const schema = {
     "closes": "18:00"
   },
   "sameAs": [
-    SITE_CONFIG.social.facebook,
-    SITE_CONFIG.social.instagram
+    info.social.facebook,
+    info.social.instagram
   ]
 };
 ---

@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
+import pageData from '../../data/pages/blog.json';
 
 export async function getStaticPaths() {
 	const posts = await getCollection('blog');
@@ -13,20 +14,23 @@ const { post } = Astro.props;
 const { Content } = await post.render();
 const posts = await getCollection('blog');
 const relatedPosts = posts.filter(p => p.slug !== post.slug).slice(0, 2);
+
+const config = pageData.slug_page;
+const authorString = config.hero_section.author_prefix_format.replace('{author}', config.hero_section.author_name);
 ---
 
 <Layout title={`${post.data.title} | Blog Andaime PRO`}>
 	<main>
 		<article class="bg-white">
 			<!-- Header do Post -->
-			<div class="bg-slate-900 py-32 text-center text-white relative overflow-hidden">
+			<div class={`py-32 text-center text-white relative overflow-hidden ${config.hero_section.bg_color}`}>
 				<div class="container relative z-10">
-					<p class="text-primary font-black uppercase tracking-widest mb-6">Segurança e Dicas</p>
+					<p class="text-primary font-black uppercase tracking-widest mb-6">{config.hero_section.fixed_category_badge}</p>
 					<h1 class="text-5xl md:text-7xl font-black leading-tight max-w-5xl mx-auto tracking-tighter">
 						{post.data.title}
 					</h1>
 					<p class="mt-8 text-slate-400 text-lg">
-						Por Equipe Andaime PRO • {post.data.pubDate.toLocaleDateString('pt-BR', { year: 'numeric', month: 'long', day: 'numeric' })}
+						{authorString}{post.data.pubDate.toLocaleDateString('pt-BR', { year: 'numeric', month: 'long', day: 'numeric' })}
 					</p>
 				</div>
 				<div class="absolute inset-0 bg-primary/5 opacity-20"></div>
@@ -42,12 +46,12 @@ const relatedPosts = posts.filter(p => p.slug !== post.slug).slice(0, 2);
 
 						<!-- CTA Interno do Blog -->
 						<div class="mt-20 p-12 bg-slate-50 border border-slate-100 rounded-3xl flex flex-col md:flex-row items-center gap-10">
-							<div class="text-4xl">💡</div>
+							<div class="text-4xl">{config.internal_cta_box.icon_emoji}</div>
 							<div>
-								<h3 class="text-2xl font-black text-slate-900 mb-2">Leve este conhecimento para sua obra</h3>
-								<p class="text-slate-600 text-lg mb-6">Precisa de equipamentos que sigam todas as normas mencionadas acima?</p>
-								<a href="/contato" class="text-secondary font-black text-xl hover:translate-x-2 transition-transform inline-flex items-center gap-2">
-									Pedir Orçamento Agora →
+								<h3 class="text-2xl font-black text-slate-900 mb-2">{config.internal_cta_box.title}</h3>
+								<p class="text-slate-600 text-lg mb-6">{config.internal_cta_box.subtitle}</p>
+								<a href={config.internal_cta_box.button.target_url} class="text-secondary font-black text-xl hover:translate-x-2 transition-transform inline-flex items-center gap-2">
+									{config.internal_cta_box.button.label}
 								</a>
 							</div>
 						</div>
@@ -56,14 +60,20 @@ const relatedPosts = posts.filter(p => p.slug !== post.slug).slice(0, 2);
 					<!-- Sidebar -->
 					<div class="lg:col-span-1 border-l border-slate-100 pl-12 hidden lg:block">
 						<div class="sticky top-32">
-							<h3 class="text-xl font-black text-slate-900 mb-8 border-b-4 border-primary inline-block">Posts Relacionados</h3>
+							<h3 class="text-xl font-black text-slate-900 mb-8 border-b-4 border-primary inline-block">{config.sidebar_sticky.title}</h3>
 							<div class="space-y-12">
-								{relatedPosts.map(p => (
-									<a href={`/blog/${p.slug}`} class="group block space-y-4 text-center">
-										<div class="aspect-video bg-slate-100 rounded-xl group-hover:scale-105 transition-transform"></div>
-										<h4 class="font-bold text-slate-900 leading-tight group-hover:text-secondary transition-colors">{p.data.title}</h4>
-									</a>
-								))}
+								{relatedPosts.map(p => {
+									const relatedImg = p.data.heroImage || pageData.index_page.layout_cards.fallback_image_url;
+									return (
+										<a href={`/blog/${p.slug}`} class="group block space-y-4 text-center">
+											<div 
+												class={`aspect-video bg-slate-100 rounded-xl bg-cover bg-center transition-transform ${config.sidebar_sticky.enable_zoom_miniatura ? 'group-hover:scale-105' : ''}`}
+												style={{ backgroundImage: `url('${relatedImg}')` }}
+											></div>
+											<h4 class="font-bold text-slate-900 leading-tight group-hover:text-secondary transition-colors">{p.data.title}</h4>
+										</a>
+									);
+								})}
 							</div>
 						</div>
 					</div>

@@ -1,0 +1,111 @@
+{
+  "header_navigation": {
+    "enable_sticky_header": true,
+    "enable_backdrop_blur": false,
+    "nav_links": [
+      {
+        "label": "Início",
+        "url": "/"
+      },
+      {
+        "label": "Serviços ",
+        "url": "/servicos"
+      },
+      {
+        "label": "Sobre ",
+        "url": "/sobre"
+      },
+      {
+        "label": "Blog ",
+        "url": "/blog"
+      },
+      {
+        "label": "Contato",
+        "url": "/contato"
+      }
+    ],
+    "cta_button": {
+      "label": "Orçamento gratuito",
+      "url": "https://wa.link/s6cqqr"
+    }
+  },
+  "footer_section": {
+    "description_text": "tesdsssssss",
+    "copyright_format": "Vasco da gama",
+    "nav_column_title": "Navegação",
+    "contact_column_title": "Contato",
+    "nav_links": [
+      {
+        "label": "Equipamentos testeee",
+        "url": "/blog"
+      },
+      {
+        "label": "Segurança (Blog) testeee",
+        "url": "/blog"
+      },
+      {
+        "label": "Orçamentos testeeeee",
+        "url": "/contato"
+      },
+      {
+        "label": "Sobre Nós vascoooo",
+        "url": "/sobre"
+      },
+      {
+        "label": "Novo Item",
+        "url": "/"
+      },
+      {
+        "label": "Novo Item",
+        "url": "/"
+      }
+    ],
+    "legal_links": [
+      {
+        "label": "Privacidade TESTEEEE",
+        "url": "/privacidade"
+      },
+      {
+        "label": "Termos de Uso TESTEEEE",
+        "url": "/termos"
+      }
+    ]
+  },
+  "identity": {
+    "company_name": " TESTE",
+    "logo_url": "/images/logo.png",
+    "favicon_url": "/images/favicon.png",
+    "colors": {
+      "primary": "#dc2626",
+      "secondary": "#1f2937",
+      "accent": "#4b5563"
+    }
+  },
+  "contact_info": {
+    "domain": "https://andaimesrj.com.br",
+    "email": "contato@testeeeeeeee",
+    "phone": "(21) 9999999999",
+    "whatsapp": "219999999999",
+    "address": {
+      "street": "asaaaaaaaaaaa",
+      "neighborhood": "ASDASDASD",
+      "city": "asdasdasd",
+      "state": "SP",
+      "zip": "2222222222"
+    },
+    "social": {
+      "instagram": "https://instagram.com/TESEEEEEEEE",
+      "facebook": "https://facebook.com/TESSSSSSSS"
+    }
+  },
+  "global_seo": {
+    "default_meta_description": "Líder em locação de andaimes no Rio de Janeiro. Equipamentos certificados NR-18, entrega rápida e suporte técnico especializado para sua obra. sddddddd",
+    "default_meta_keywords": "aluguel de andaimes rj, locação de andaimes rio de janeiro, andaime pro, segurança em obras, nr-18   dddddddddddddd"
+  },
+  "floating_whatsapp_btn": {
+    "tooltip_label": "Vascooo",
+    "whatsapp_brand_color": "#f94f06",
+    "enable_bounce_subtle": true,
+    "enable_radar_ping": true
+  }
+}
